@@ -42,7 +42,7 @@ jobs:
           chrome-version: stable
       - name: Run Java Selenium Tests
         env:
-          MY_CLOUDSMITH_TOKEN: ${{ secrets.MY_CLOUDSMITH_TOKEN }}
+          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
         run: |
           mvn clean test
       - name: Level CI Accessibility Analysis
