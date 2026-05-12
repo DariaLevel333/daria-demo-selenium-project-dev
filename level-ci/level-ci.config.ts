@@ -4,5 +4,5 @@ export default {
   project: "demo-selenium-project",
   token: process.env.LEVEL_CI_TOKEN,
   server: "https://api.dev.userway.dev",
-  reportPaths: ["./level-ci-reports"],
+  reportPaths: ["./level-ci/level-ci-reports"],
 } satisfies Config;
