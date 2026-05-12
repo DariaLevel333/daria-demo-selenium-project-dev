@@ -39,7 +39,7 @@
         <dependency>
             <groupId>org.levelci</groupId>
             <artifactId>a11y-selenium-java</artifactId>
-            <version>0.2.2-preview-20260429143234</version>
+            <version>0.2.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -100,8 +100,8 @@
 
     <repositories>
         <repository>
-            <id>level-access-level-ci-internal</id>
-            <url>https://dl.levelaccess.net/${env.MY_CLOUDSMITH_TOKEN}/level-ci-internal/maven/</url>
+            <id>level-access-level-ci</id>
+            <url>https://dl.levelaccess.net/${env.CLOUDSMITH_TOKEN}/level-ci/maven/</url>
             <releases>
             <enabled>true</enabled>
             <updatePolicy>always</updatePolicy>
