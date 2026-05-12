@@ -1,0 +1,53 @@
+name: CI
+on:
+  pull_request:
+    branches: ["main"]
+  push:
+    branches: ["main"]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install npm packages
+        run: |
+          cd ./level-ci
+          npm install
+          nohup npm run dev > output.log 2>&1 &
+          sleep 5
+          cd ..
+        env:
+          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
+      - name: Install Java 17
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openjdk-17-jdk
+          java -version
+      - name: Install Maven
+        run: |
+          sudo apt-get install -y maven
+          mvn -version
+      # ManualScanTest (default Surefire run) uses ChromeDriver; ubuntu-latest has no Chrome by default.
+      - name: Setup Chrome for Selenium
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+      - name: Run Java Selenium Tests
+        env:
+          MY_CLOUDSMITH_TOKEN: ${{ secrets.MY_CLOUDSMITH_TOKEN }}
+        run: |
+          mvn clean test
+      - name: Level CI Accessibility Analysis
+        uses: levelaccess/level-ci@dev
+        with:
+          config_path: "./level-ci/level-ci.config.ts"
+        env:
+          LEVEL_CI_TOKEN: ${{ secrets.LEVEL_CI_TOKEN }}

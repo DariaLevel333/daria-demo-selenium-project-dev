@@ -1,0 +1,13 @@
+{
+  "name": "a11y-selenium-java-sample",
+  "version": "1.0.0",
+  "description": "This is a sample project which shows use cases of LevelCI's  Java Selenium Accessibility testing integration. There are two ways  of using the integration - manual and background runner mode.",
+  "main": "index.js",
+  "author": "LevelCI DevTools",
+  "license": "ISC",
+  "devDependencies": {
+    "@level-ci/cli": "^0.1.16",
+    "@types/node": "^22.7.5",
+    "typescript": "^5.6.3"
+  }
+}
