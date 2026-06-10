@@ -31,11 +31,6 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y openjdk-17-jdk
           java -version
-      - name: Check artifact directly
-        run: |
-          curl -I https://dl.levelaccess.net/${CLOUDSMITH_TOKEN}/level-ci/maven/org/levelci/a11y-selenium-java/0.2.1/a11y-selenium-java-0.2.1.pom
-        env:
-          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
       - name: Install Maven
         run: |
           sudo apt-get install -y maven
