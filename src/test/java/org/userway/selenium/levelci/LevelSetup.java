@@ -1,11 +1,8 @@
 package org.userway.selenium.levelci;
 
-import org.levelci.selenium.AccessibilityAuditor;
 import org.levelci.selenium.model.config.AnalysisConfig;
 import org.levelci.selenium.model.config.AuditConfig;
 import org.openqa.selenium.WebDriver;
-import static org.assertj.core.api.Assertions.assertThat;
-
 
 public class LevelSetup {
 
@@ -21,9 +18,6 @@ public class LevelSetup {
                 .analysisConfiguration(ANALYSIS_CONFIG)
                 .saveReport(true)
                 .build();
-
-    AuditConfig auditConfig = LevelSetup.getAuditConfig(driver);
-    var result = AccessibilityAuditor.levelAnalyze(auditConfig);
-    assertThat(result.getError()).isNull();
     }
 }
+
