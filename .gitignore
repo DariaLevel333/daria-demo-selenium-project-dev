@@ -14,7 +14,6 @@ target/
 node_modules
 level-ci-reports
 .idea
-.dest
 
 ### Eclipse ###
 .apt_generated

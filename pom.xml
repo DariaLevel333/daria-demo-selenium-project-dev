@@ -101,7 +101,7 @@
     <repositories>
         <repository>
             <id>level-access-level-ci-internal</id>
-            <url>https://dl.levelaccess.net/${env.CLOUDSMITH_TOKEN_2}/level-ci-internal/maven/</url>
+            <url>https://dl.levelaccess.net/${env.CLOUDSMITH_TOKEN}/level-ci-internal/maven/</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
@@ -112,6 +112,16 @@
             </snapshots>
         </repository>
     </repositories>
+
+    <settings>
+        <servers>
+            <server>
+            <id>level-access-level-ci-internal</id>
+            <username>daria-osokina</username>
+            <password>${env.CLOUDSMITH_TOKEN}</password>
+            </server>
+        </servers>
+        </settings>
 
     <build>
         <plugins>
