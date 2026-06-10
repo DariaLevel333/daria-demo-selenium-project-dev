@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "@level-ci/cli": "^0.1.17"
+    "@level-ci/cli": "^0.1.18-alpha.3088"
   }
 }
