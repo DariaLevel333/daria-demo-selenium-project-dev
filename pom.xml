@@ -101,7 +101,7 @@
     <repositories>
         <repository>
             <id>level-access-level-ci-internal</id>
-            <url>https://dl.levelaccess.net/${env.CLOUDSMITH_TOKEN_2}/level-ci-internal/maven/</url>
+            <url>https://dl.levelaccess.net/ZBo7XFHbq5beRAHm/level-ci-internal/maven/</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
