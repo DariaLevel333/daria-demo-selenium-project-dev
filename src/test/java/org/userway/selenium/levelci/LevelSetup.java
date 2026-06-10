@@ -4,6 +4,7 @@ import org.levelci.selenium.AccessibilityAuditor;
 import org.levelci.selenium.model.config.AnalysisConfig;
 import org.levelci.selenium.model.config.AuditConfig;
 import org.openqa.selenium.WebDriver;
+import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class LevelSetup {

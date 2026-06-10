@@ -40,11 +40,22 @@ jobs:
         uses: browser-actions/setup-chrome@v1
         with:
           chrome-version: stable
-      - name: Run Java Selenium Tests
+      - name: Verify token exists
+        run: |
+          if [ -z "$CLOUDSMITH_TOKEN" ]; then
+            echo "TOKEN MISSING"
+            exit 1
+          else
+            echo "TOKEN PRESENT"
+          fi
+        env:
+          CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
+      - name: Debug Maven Repository Access
         env:
           CLOUDSMITH_TOKEN: ${{ secrets.CLOUDSMITH_TOKEN }}
         run: |
-          mvn clean test
+          echo "Token length: ${#CLOUDSMITH_TOKEN}"
+          mvn -X dependency:tree
       - name: Level CI Accessibility Analysis
         uses: levelaccess/level-ci@dev
         with:
