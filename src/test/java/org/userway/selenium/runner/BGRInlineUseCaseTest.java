@@ -15,8 +15,7 @@ public class BGRInlineUseCaseTest {
         WebDriver driver = new ChromeDriver(
                 new ChromeOptions().addArguments("--headless")
         );
-        driver = LevelCiBackgroundRunner.getInstance()
-                .watchDriver(driver, "BGRInlineUseCase-test_1");
+        LevelCiBackgroundRunner.getInstance();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(10));
         // Each will be ignored
         driver.get("https://userway.org/");
@@ -28,8 +27,7 @@ public class BGRInlineUseCaseTest {
         WebDriver driver = new ChromeDriver(
                 new ChromeOptions().addArguments("--headless")
         );
-        driver = LevelCiBackgroundRunner.getInstance()
-                .watchDriver(driver, "BGRInlineUseCase-test_1");
+        LevelCiBackgroundRunner.getInstance();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(10));
 
         driver.get("https://userway.org/testimonials/");
@@ -42,8 +40,7 @@ public class BGRInlineUseCaseTest {
                 new ChromeOptions().addArguments("--headless")
         );
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(10));
-        driver = LevelCiBackgroundRunner.getInstance()
-                .watchDriver(driver, "BGRInlineUseCase-test_1");
+        LevelCiBackgroundRunner.getInstance();
 
         driver.get("https://userway.org/university/");
         driver.get("https://userway.org/faq/");

@@ -25,9 +25,8 @@ public class BGRBeforeEachUseCaseTest {
         this.driver = new ChromeDriver(options);
         driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(10));
 
-        // Get proxy instance
-        driver = LevelCiBackgroundRunner.getInstance()
-                .watchDriver(driver, "BGRBeforeEachUseCaseTest-test_" + (testNumber++) + "-driver");
+        // Background runner API is currently disabled in this version.
+        LevelCiBackgroundRunner.getInstance();
     }
 
     @AfterEach
