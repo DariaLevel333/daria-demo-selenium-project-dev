@@ -39,7 +39,7 @@
         <dependency>
             <groupId>org.levelci</groupId>
             <artifactId>a11y-selenium-java</artifactId>
-            <version>0.2.2-alpha-20260605073507</version>
+            <version>0.2.1-alpha-20260505053834</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
